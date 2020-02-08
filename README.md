@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 *IcHackControllerApi* | [**create_new_user_wallet_using_post**](docs/IcHackControllerApi.md#create_new_user_wallet_using_post) | **POST** /create-wallet | createNewUserWallet
 *IcHackControllerApi* | [**get_account_id_using_get**](docs/IcHackControllerApi.md#get_account_id_using_get) | **GET** /get-account-id | getAccountID
 *IcHackControllerApi* | [**get_file_using_get**](docs/IcHackControllerApi.md#get_file_using_get) | **GET** /image | getFile
+*IcHackControllerApi* | [**issue_ticket_using_post**](docs/IcHackControllerApi.md#issue_ticket_using_post) | **POST** /issue-ticket | issueTicket
 *IcHackControllerApi* | [**verify_proof_from_s3_using_get**](docs/IcHackControllerApi.md#verify_proof_from_s3_using_get) | **GET** /verify | verifyProofFromS3
 *IssuerControllerApi* | [**get_credential_definition_using_put**](docs/IssuerControllerApi.md#get_credential_definition_using_put) | **PUT** /get-credential-definition | getCredentialDefinition
 *IssuerControllerApi* | [**issuer_create_credentials_using_put**](docs/IssuerControllerApi.md#issuer_create_credentials_using_put) | **PUT** /create | Issues a Driving Licence to a prover

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**create_new_user_wallet_using_post**](IcHackControllerApi.md#create_new_user_wallet_using_post) | **POST** /create-wallet | createNewUserWallet
 [**get_account_id_using_get**](IcHackControllerApi.md#get_account_id_using_get) | **GET** /get-account-id | getAccountID
 [**get_file_using_get**](IcHackControllerApi.md#get_file_using_get) | **GET** /image | getFile
+[**issue_ticket_using_post**](IcHackControllerApi.md#issue_ticket_using_post) | **POST** /issue-ticket | issueTicket
 [**verify_proof_from_s3_using_get**](IcHackControllerApi.md#verify_proof_from_s3_using_get) | **GET** /verify | verifyProofFromS3
 
 
@@ -220,6 +221,62 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: image/jpg
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **issue_ticket_using_post**
+> EmailInfo issue_ticket_using_post(did=did, event=event, master_secret_id=master_secret_id, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key, seat=seat)
+
+issueTicket
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IcHackControllerApi()
+did = 'did_example' # str | did (optional)
+event = 'event_example' # str | event (optional)
+master_secret_id = 'master_secret_id_example' # str | masterSecretID (optional)
+prover_wallet_id = 'prover_wallet_id_example' # str | proverWalletId (optional)
+prover_wallet_key = 'prover_wallet_key_example' # str | proverWalletKey (optional)
+seat = 'seat_example' # str | seat (optional)
+
+try:
+    # issueTicket
+    api_response = api_instance.issue_ticket_using_post(did=did, event=event, master_secret_id=master_secret_id, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key, seat=seat)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IcHackControllerApi->issue_ticket_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **did** | **str**| did | [optional] 
+ **event** | **str**| event | [optional] 
+ **master_secret_id** | **str**| masterSecretID | [optional] 
+ **prover_wallet_id** | **str**| proverWalletId | [optional] 
+ **prover_wallet_key** | **str**| proverWalletKey | [optional] 
+ **seat** | **str**| seat | [optional] 
+
+### Return type
+
+[**EmailInfo**](EmailInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
