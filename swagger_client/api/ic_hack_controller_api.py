@@ -289,9 +289,9 @@ class IcHackControllerApi(object):
 
         :param async_req bool
         :param str did: did
-        :param str master_secret_id: masterSecretID
-        :param str prover_wallet_id: proverWalletId
-        :param str prover_wallet_key: proverWalletKey
+        :param str id: id
+        :param str key: key
+        :param str mid: mid
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -313,15 +313,15 @@ class IcHackControllerApi(object):
 
         :param async_req bool
         :param str did: did
-        :param str master_secret_id: masterSecretID
-        :param str prover_wallet_id: proverWalletId
-        :param str prover_wallet_key: proverWalletKey
+        :param str id: id
+        :param str key: key
+        :param str mid: mid
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['did', 'master_secret_id', 'prover_wallet_id', 'prover_wallet_key']  # noqa: E501
+        all_params = ['did', 'id', 'key', 'mid']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -344,12 +344,12 @@ class IcHackControllerApi(object):
         query_params = []
         if 'did' in params:
             query_params.append(('did', params['did']))  # noqa: E501
-        if 'master_secret_id' in params:
-            query_params.append(('masterSecretID', params['master_secret_id']))  # noqa: E501
-        if 'prover_wallet_id' in params:
-            query_params.append(('proverWalletId', params['prover_wallet_id']))  # noqa: E501
-        if 'prover_wallet_key' in params:
-            query_params.append(('proverWalletKey', params['prover_wallet_key']))  # noqa: E501
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
+        if 'key' in params:
+            query_params.append(('key', params['key']))  # noqa: E501
+        if 'mid' in params:
+            query_params.append(('mid', params['mid']))  # noqa: E501
 
         header_params = {}
 
@@ -373,6 +373,107 @@ class IcHackControllerApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_event_and_seat_using_get(self, **kwargs):  # noqa: E501
+        """getEventAndSeat  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_event_and_seat_using_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str master_secret_id: masterSecretId
+        :param str prover_did: proverDID
+        :param str prover_wallet_id: proverWalletId
+        :param str prover_wallet_key: proverWalletKey
+        :return: EventAndSeat
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_event_and_seat_using_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_event_and_seat_using_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_event_and_seat_using_get_with_http_info(self, **kwargs):  # noqa: E501
+        """getEventAndSeat  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_event_and_seat_using_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str master_secret_id: masterSecretId
+        :param str prover_did: proverDID
+        :param str prover_wallet_id: proverWalletId
+        :param str prover_wallet_key: proverWalletKey
+        :return: EventAndSeat
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['master_secret_id', 'prover_did', 'prover_wallet_id', 'prover_wallet_key']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_event_and_seat_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'master_secret_id' in params:
+            query_params.append(('masterSecretId', params['master_secret_id']))  # noqa: E501
+        if 'prover_did' in params:
+            query_params.append(('proverDID', params['prover_did']))  # noqa: E501
+        if 'prover_wallet_id' in params:
+            query_params.append(('proverWalletId', params['prover_wallet_id']))  # noqa: E501
+        if 'prover_wallet_key' in params:
+            query_params.append(('proverWalletKey', params['prover_wallet_key']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/get-event-and-seat-id', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='EventAndSeat',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -465,18 +566,18 @@ class IcHackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def issue_ticket_using_post(self, **kwargs):  # noqa: E501
-        """issueTicket  # noqa: E501
+    def issue_airline_ticket_using_post(self, **kwargs):  # noqa: E501
+        """issueAirlineTicket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.issue_ticket_using_post(async_req=True)
+        >>> thread = api.issue_airline_ticket_using_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str did: did
-        :param str event: event
+        :param str area: area
         :param str master_secret_id: masterSecretID
+        :param str prover_did: proverDid
         :param str prover_wallet_id: proverWalletId
         :param str prover_wallet_key: proverWalletKey
         :param str seat: seat
@@ -486,23 +587,23 @@ class IcHackControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.issue_ticket_using_post_with_http_info(**kwargs)  # noqa: E501
+            return self.issue_airline_ticket_using_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.issue_ticket_using_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.issue_airline_ticket_using_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def issue_ticket_using_post_with_http_info(self, **kwargs):  # noqa: E501
-        """issueTicket  # noqa: E501
+    def issue_airline_ticket_using_post_with_http_info(self, **kwargs):  # noqa: E501
+        """issueAirlineTicket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.issue_ticket_using_post_with_http_info(async_req=True)
+        >>> thread = api.issue_airline_ticket_using_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str did: did
-        :param str event: event
+        :param str area: area
         :param str master_secret_id: masterSecretID
+        :param str prover_did: proverDid
         :param str prover_wallet_id: proverWalletId
         :param str prover_wallet_key: proverWalletKey
         :param str seat: seat
@@ -511,7 +612,7 @@ class IcHackControllerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['did', 'event', 'master_secret_id', 'prover_wallet_id', 'prover_wallet_key', 'seat']  # noqa: E501
+        all_params = ['area', 'master_secret_id', 'prover_did', 'prover_wallet_id', 'prover_wallet_key', 'seat']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -522,7 +623,7 @@ class IcHackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method issue_ticket_using_post" % key
+                    " to method issue_airline_ticket_using_post" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -532,12 +633,12 @@ class IcHackControllerApi(object):
         path_params = {}
 
         query_params = []
-        if 'did' in params:
-            query_params.append(('did', params['did']))  # noqa: E501
-        if 'event' in params:
-            query_params.append(('event', params['event']))  # noqa: E501
+        if 'area' in params:
+            query_params.append(('area', params['area']))  # noqa: E501
         if 'master_secret_id' in params:
             query_params.append(('masterSecretID', params['master_secret_id']))  # noqa: E501
+        if 'prover_did' in params:
+            query_params.append(('proverDid', params['prover_did']))  # noqa: E501
         if 'prover_wallet_id' in params:
             query_params.append(('proverWalletId', params['prover_wallet_id']))  # noqa: E501
         if 'prover_wallet_key' in params:

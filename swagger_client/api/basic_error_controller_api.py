@@ -33,36 +33,36 @@ class BasicErrorControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def error_html_using_delete(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_delete(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_delete(async_req=True)
+        >>> thread = api.error_using_delete(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.error_html_using_delete_with_http_info(**kwargs)  # noqa: E501
+            return self.error_using_delete_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.error_html_using_delete_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.error_using_delete_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def error_html_using_delete_with_http_info(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_delete_with_http_info(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_delete_with_http_info(async_req=True)
+        >>> thread = api.error_using_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -78,7 +78,7 @@ class BasicErrorControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method error_html_using_delete" % key
+                    " to method error_using_delete" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -97,7 +97,7 @@ class BasicErrorControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -110,7 +110,7 @@ class BasicErrorControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ModelAndView',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -118,36 +118,36 @@ class BasicErrorControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def error_html_using_get(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_get(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_get(async_req=True)
+        >>> thread = api.error_using_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.error_html_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.error_using_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.error_html_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.error_using_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def error_html_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_get_with_http_info(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_get_with_http_info(async_req=True)
+        >>> thread = api.error_using_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -163,7 +163,7 @@ class BasicErrorControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method error_html_using_get" % key
+                    " to method error_using_get" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -182,7 +182,7 @@ class BasicErrorControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -195,7 +195,7 @@ class BasicErrorControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ModelAndView',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -203,36 +203,36 @@ class BasicErrorControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def error_html_using_head(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_head(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_head(async_req=True)
+        >>> thread = api.error_using_head(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.error_html_using_head_with_http_info(**kwargs)  # noqa: E501
+            return self.error_using_head_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.error_html_using_head_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.error_using_head_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def error_html_using_head_with_http_info(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_head_with_http_info(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_head_with_http_info(async_req=True)
+        >>> thread = api.error_using_head_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -248,7 +248,7 @@ class BasicErrorControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method error_html_using_head" % key
+                    " to method error_using_head" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -267,7 +267,7 @@ class BasicErrorControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -284,7 +284,7 @@ class BasicErrorControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ModelAndView',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -292,36 +292,36 @@ class BasicErrorControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def error_html_using_options(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_options(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_options(async_req=True)
+        >>> thread = api.error_using_options(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.error_html_using_options_with_http_info(**kwargs)  # noqa: E501
+            return self.error_using_options_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.error_html_using_options_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.error_using_options_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def error_html_using_options_with_http_info(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_options_with_http_info(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_options_with_http_info(async_req=True)
+        >>> thread = api.error_using_options_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -337,7 +337,7 @@ class BasicErrorControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method error_html_using_options" % key
+                    " to method error_using_options" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -356,7 +356,7 @@ class BasicErrorControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -373,7 +373,7 @@ class BasicErrorControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ModelAndView',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -381,36 +381,36 @@ class BasicErrorControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def error_html_using_patch(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_patch(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_patch(async_req=True)
+        >>> thread = api.error_using_patch(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.error_html_using_patch_with_http_info(**kwargs)  # noqa: E501
+            return self.error_using_patch_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.error_html_using_patch_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.error_using_patch_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def error_html_using_patch_with_http_info(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_patch_with_http_info(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_patch_with_http_info(async_req=True)
+        >>> thread = api.error_using_patch_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -426,7 +426,7 @@ class BasicErrorControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method error_html_using_patch" % key
+                    " to method error_using_patch" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -445,7 +445,7 @@ class BasicErrorControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -462,7 +462,7 @@ class BasicErrorControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ModelAndView',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -470,36 +470,36 @@ class BasicErrorControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def error_html_using_post(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_post(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_post(async_req=True)
+        >>> thread = api.error_using_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.error_html_using_post_with_http_info(**kwargs)  # noqa: E501
+            return self.error_using_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.error_html_using_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.error_using_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def error_html_using_post_with_http_info(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_post_with_http_info(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_post_with_http_info(async_req=True)
+        >>> thread = api.error_using_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -515,7 +515,7 @@ class BasicErrorControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method error_html_using_post" % key
+                    " to method error_using_post" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -534,7 +534,7 @@ class BasicErrorControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -551,7 +551,7 @@ class BasicErrorControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ModelAndView',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -559,36 +559,36 @@ class BasicErrorControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def error_html_using_put(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_put(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_put(async_req=True)
+        >>> thread = api.error_using_put(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.error_html_using_put_with_http_info(**kwargs)  # noqa: E501
+            return self.error_using_put_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.error_html_using_put_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.error_using_put_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def error_html_using_put_with_http_info(self, **kwargs):  # noqa: E501
-        """errorHtml  # noqa: E501
+    def error_using_put_with_http_info(self, **kwargs):  # noqa: E501
+        """error  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.error_html_using_put_with_http_info(async_req=True)
+        >>> thread = api.error_using_put_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ModelAndView
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -604,7 +604,7 @@ class BasicErrorControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method error_html_using_put" % key
+                    " to method error_using_put" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -623,7 +623,7 @@ class BasicErrorControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -640,7 +640,7 @@ class BasicErrorControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ModelAndView',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

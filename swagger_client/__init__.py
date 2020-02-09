@@ -17,6 +17,7 @@ from __future__ import absolute_import
 
 # import apis into sdk package
 from swagger_client.api.basic_error_controller_api import BasicErrorControllerApi
+from swagger_client.api.ic_hack_airline_controller_api import IcHackAirlineControllerApi
 from swagger_client.api.ic_hack_controller_api import IcHackControllerApi
 from swagger_client.api.issuer_controller_api import IssuerControllerApi
 from swagger_client.api.master_controller_api import MasterControllerApi
@@ -29,8 +30,12 @@ from swagger_client.api.wallet_controller_api import WalletControllerApi
 from swagger_client.api_client import ApiClient
 from swagger_client.configuration import Configuration
 # import models into sdk package
+from swagger_client.models.area import Area
 from swagger_client.models.credential_definition import CredentialDefinition
 from swagger_client.models.email_info import EmailInfo
+from swagger_client.models.event import Event
+from swagger_client.models.event_and_seat import EventAndSeat
 from swagger_client.models.image_name import ImageName
 from swagger_client.models.model_and_view import ModelAndView
+from swagger_client.models.seat import Seat
 from swagger_client.models.view import View

@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 # import apis into api package
 from swagger_client.api.basic_error_controller_api import BasicErrorControllerApi
+from swagger_client.api.ic_hack_airline_controller_api import IcHackAirlineControllerApi
 from swagger_client.api.ic_hack_controller_api import IcHackControllerApi
 from swagger_client.api.issuer_controller_api import IssuerControllerApi
 from swagger_client.api.master_controller_api import MasterControllerApi

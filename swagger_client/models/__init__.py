@@ -15,8 +15,12 @@
 from __future__ import absolute_import
 
 # import models into model package
+from swagger_client.models.area import Area
 from swagger_client.models.credential_definition import CredentialDefinition
 from swagger_client.models.email_info import EmailInfo
+from swagger_client.models.event import Event
+from swagger_client.models.event_and_seat import EventAndSeat
 from swagger_client.models.image_name import ImageName
 from swagger_client.models.model_and_view import ModelAndView
+from swagger_client.models.seat import Seat
 from swagger_client.models.view import View

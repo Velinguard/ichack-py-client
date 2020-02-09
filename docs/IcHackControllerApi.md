@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**create_new_user_id_using_post**](IcHackControllerApi.md#create_new_user_id_using_post) | **POST** /createNewUser | createNewUserID
 [**create_new_user_wallet_using_post**](IcHackControllerApi.md#create_new_user_wallet_using_post) | **POST** /create-wallet | createNewUserWallet
 [**get_account_id_using_get**](IcHackControllerApi.md#get_account_id_using_get) | **GET** /get-account-id | getAccountID
+[**get_event_and_seat_using_get**](IcHackControllerApi.md#get_event_and_seat_using_get) | **GET** /get-event-and-seat-id | getEventAndSeat
 [**get_file_using_get**](IcHackControllerApi.md#get_file_using_get) | **GET** /image | getFile
-[**issue_ticket_using_post**](IcHackControllerApi.md#issue_ticket_using_post) | **POST** /issue-ticket | issueTicket
+[**issue_airline_ticket_using_post**](IcHackControllerApi.md#issue_airline_ticket_using_post) | **POST** /issue-ticket | issueAirlineTicket
 [**verify_proof_from_s3_using_get**](IcHackControllerApi.md#verify_proof_from_s3_using_get) | **GET** /verify | verifyProofFromS3
 
 
@@ -131,7 +132,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_id_using_get**
-> str get_account_id_using_get(did=did, master_secret_id=master_secret_id, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key)
+> str get_account_id_using_get(did=did, id=id, key=key, mid=mid)
 
 getAccountID
 
@@ -146,13 +147,13 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.IcHackControllerApi()
 did = 'did_example' # str | did (optional)
-master_secret_id = 'master_secret_id_example' # str | masterSecretID (optional)
-prover_wallet_id = 'prover_wallet_id_example' # str | proverWalletId (optional)
-prover_wallet_key = 'prover_wallet_key_example' # str | proverWalletKey (optional)
+id = 'id_example' # str | id (optional)
+key = 'key_example' # str | key (optional)
+mid = 'mid_example' # str | mid (optional)
 
 try:
     # getAccountID
-    api_response = api_instance.get_account_id_using_get(did=did, master_secret_id=master_secret_id, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key)
+    api_response = api_instance.get_account_id_using_get(did=did, id=id, key=key, mid=mid)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IcHackControllerApi->get_account_id_using_get: %s\n" % e)
@@ -163,13 +164,65 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **did** | **str**| did | [optional] 
- **master_secret_id** | **str**| masterSecretID | [optional] 
+ **id** | **str**| id | [optional] 
+ **key** | **str**| key | [optional] 
+ **mid** | **str**| mid | [optional] 
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_event_and_seat_using_get**
+> EventAndSeat get_event_and_seat_using_get(master_secret_id=master_secret_id, prover_did=prover_did, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key)
+
+getEventAndSeat
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IcHackControllerApi()
+master_secret_id = 'master_secret_id_example' # str | masterSecretId (optional)
+prover_did = 'prover_did_example' # str | proverDID (optional)
+prover_wallet_id = 'prover_wallet_id_example' # str | proverWalletId (optional)
+prover_wallet_key = 'prover_wallet_key_example' # str | proverWalletKey (optional)
+
+try:
+    # getEventAndSeat
+    api_response = api_instance.get_event_and_seat_using_get(master_secret_id=master_secret_id, prover_did=prover_did, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IcHackControllerApi->get_event_and_seat_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **master_secret_id** | **str**| masterSecretId | [optional] 
+ **prover_did** | **str**| proverDID | [optional] 
  **prover_wallet_id** | **str**| proverWalletId | [optional] 
  **prover_wallet_key** | **str**| proverWalletKey | [optional] 
 
 ### Return type
 
-**str**
+[**EventAndSeat**](EventAndSeat.md)
 
 ### Authorization
 
@@ -224,10 +277,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **issue_ticket_using_post**
-> EmailInfo issue_ticket_using_post(did=did, event=event, master_secret_id=master_secret_id, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key, seat=seat)
+# **issue_airline_ticket_using_post**
+> EmailInfo issue_airline_ticket_using_post(area=area, master_secret_id=master_secret_id, prover_did=prover_did, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key, seat=seat)
 
-issueTicket
+issueAirlineTicket
 
 ### Example
 ```python
@@ -239,28 +292,28 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.IcHackControllerApi()
-did = 'did_example' # str | did (optional)
-event = 'event_example' # str | event (optional)
+area = 'area_example' # str | area (optional)
 master_secret_id = 'master_secret_id_example' # str | masterSecretID (optional)
+prover_did = 'prover_did_example' # str | proverDid (optional)
 prover_wallet_id = 'prover_wallet_id_example' # str | proverWalletId (optional)
 prover_wallet_key = 'prover_wallet_key_example' # str | proverWalletKey (optional)
 seat = 'seat_example' # str | seat (optional)
 
 try:
-    # issueTicket
-    api_response = api_instance.issue_ticket_using_post(did=did, event=event, master_secret_id=master_secret_id, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key, seat=seat)
+    # issueAirlineTicket
+    api_response = api_instance.issue_airline_ticket_using_post(area=area, master_secret_id=master_secret_id, prover_did=prover_did, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key, seat=seat)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling IcHackControllerApi->issue_ticket_using_post: %s\n" % e)
+    print("Exception when calling IcHackControllerApi->issue_airline_ticket_using_post: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **did** | **str**| did | [optional] 
- **event** | **str**| event | [optional] 
+ **area** | **str**| area | [optional] 
  **master_secret_id** | **str**| masterSecretID | [optional] 
+ **prover_did** | **str**| proverDid | [optional] 
  **prover_wallet_id** | **str**| proverWalletId | [optional] 
  **prover_wallet_key** | **str**| proverWalletKey | [optional] 
  **seat** | **str**| seat | [optional] 

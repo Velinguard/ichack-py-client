@@ -55,11 +55,11 @@ from pprint import pprint
 api_instance = swagger_client.BasicErrorControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # errorHtml
-    api_response = api_instance.error_html_using_delete()
+    # error
+    api_response = api_instance.error_using_delete()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BasicErrorControllerApi->error_html_using_delete: %s\n" % e)
+    print("Exception when calling BasicErrorControllerApi->error_using_delete: %s\n" % e)
 
 ```
 
@@ -69,18 +69,22 @@ All URIs are relative to *https://localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BasicErrorControllerApi* | [**error_html_using_delete**](docs/BasicErrorControllerApi.md#error_html_using_delete) | **DELETE** /error | errorHtml
-*BasicErrorControllerApi* | [**error_html_using_get**](docs/BasicErrorControllerApi.md#error_html_using_get) | **GET** /error | errorHtml
-*BasicErrorControllerApi* | [**error_html_using_head**](docs/BasicErrorControllerApi.md#error_html_using_head) | **HEAD** /error | errorHtml
-*BasicErrorControllerApi* | [**error_html_using_options**](docs/BasicErrorControllerApi.md#error_html_using_options) | **OPTIONS** /error | errorHtml
-*BasicErrorControllerApi* | [**error_html_using_patch**](docs/BasicErrorControllerApi.md#error_html_using_patch) | **PATCH** /error | errorHtml
-*BasicErrorControllerApi* | [**error_html_using_post**](docs/BasicErrorControllerApi.md#error_html_using_post) | **POST** /error | errorHtml
-*BasicErrorControllerApi* | [**error_html_using_put**](docs/BasicErrorControllerApi.md#error_html_using_put) | **PUT** /error | errorHtml
+*BasicErrorControllerApi* | [**error_using_delete**](docs/BasicErrorControllerApi.md#error_using_delete) | **DELETE** /error | error
+*BasicErrorControllerApi* | [**error_using_get**](docs/BasicErrorControllerApi.md#error_using_get) | **GET** /error | error
+*BasicErrorControllerApi* | [**error_using_head**](docs/BasicErrorControllerApi.md#error_using_head) | **HEAD** /error | error
+*BasicErrorControllerApi* | [**error_using_options**](docs/BasicErrorControllerApi.md#error_using_options) | **OPTIONS** /error | error
+*BasicErrorControllerApi* | [**error_using_patch**](docs/BasicErrorControllerApi.md#error_using_patch) | **PATCH** /error | error
+*BasicErrorControllerApi* | [**error_using_post**](docs/BasicErrorControllerApi.md#error_using_post) | **POST** /error | error
+*BasicErrorControllerApi* | [**error_using_put**](docs/BasicErrorControllerApi.md#error_using_put) | **PUT** /error | error
+*IcHackAirlineControllerApi* | [**buy_using_get**](docs/IcHackAirlineControllerApi.md#buy_using_get) | **GET** /hold-place | buy
+*IcHackAirlineControllerApi* | [**get_event_list_using_get**](docs/IcHackAirlineControllerApi.md#get_event_list_using_get) | **GET** /get-events | getEventList
+*IcHackAirlineControllerApi* | [**get_specific_event_using_get**](docs/IcHackAirlineControllerApi.md#get_specific_event_using_get) | **GET** /get-event | getSpecificEvent
 *IcHackControllerApi* | [**create_new_user_id_using_post**](docs/IcHackControllerApi.md#create_new_user_id_using_post) | **POST** /createNewUser | createNewUserID
 *IcHackControllerApi* | [**create_new_user_wallet_using_post**](docs/IcHackControllerApi.md#create_new_user_wallet_using_post) | **POST** /create-wallet | createNewUserWallet
 *IcHackControllerApi* | [**get_account_id_using_get**](docs/IcHackControllerApi.md#get_account_id_using_get) | **GET** /get-account-id | getAccountID
+*IcHackControllerApi* | [**get_event_and_seat_using_get**](docs/IcHackControllerApi.md#get_event_and_seat_using_get) | **GET** /get-event-and-seat-id | getEventAndSeat
 *IcHackControllerApi* | [**get_file_using_get**](docs/IcHackControllerApi.md#get_file_using_get) | **GET** /image | getFile
-*IcHackControllerApi* | [**issue_ticket_using_post**](docs/IcHackControllerApi.md#issue_ticket_using_post) | **POST** /issue-ticket | issueTicket
+*IcHackControllerApi* | [**issue_airline_ticket_using_post**](docs/IcHackControllerApi.md#issue_airline_ticket_using_post) | **POST** /issue-ticket | issueAirlineTicket
 *IcHackControllerApi* | [**verify_proof_from_s3_using_get**](docs/IcHackControllerApi.md#verify_proof_from_s3_using_get) | **GET** /verify | verifyProofFromS3
 *IssuerControllerApi* | [**get_credential_definition_using_put**](docs/IssuerControllerApi.md#get_credential_definition_using_put) | **PUT** /get-credential-definition | getCredentialDefinition
 *IssuerControllerApi* | [**issuer_create_credentials_using_put**](docs/IssuerControllerApi.md#issuer_create_credentials_using_put) | **PUT** /create | Issues a Driving Licence to a prover
@@ -107,10 +111,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [Area](docs/Area.md)
  - [CredentialDefinition](docs/CredentialDefinition.md)
  - [EmailInfo](docs/EmailInfo.md)
+ - [Event](docs/Event.md)
+ - [EventAndSeat](docs/EventAndSeat.md)
  - [ImageName](docs/ImageName.md)
  - [ModelAndView](docs/ModelAndView.md)
+ - [Seat](docs/Seat.md)
  - [View](docs/View.md)
 
 
