@@ -81,9 +81,12 @@ Class | Method | HTTP request | Description
 *IcHackAirlineControllerApi* | [**get_specific_event_using_get**](docs/IcHackAirlineControllerApi.md#get_specific_event_using_get) | **GET** /get-event | getSpecificEvent
 *IcHackControllerApi* | [**create_new_user_id_using_post**](docs/IcHackControllerApi.md#create_new_user_id_using_post) | **POST** /createNewUser | createNewUserID
 *IcHackControllerApi* | [**create_new_user_wallet_using_post**](docs/IcHackControllerApi.md#create_new_user_wallet_using_post) | **POST** /create-wallet | createNewUserWallet
+*IcHackControllerApi* | [**create_new_user_wallet_without_image_using_post**](docs/IcHackControllerApi.md#create_new_user_wallet_without_image_using_post) | **POST** /create-wallet-without-image | createNewUserWalletWithoutImage
 *IcHackControllerApi* | [**get_account_id_using_get**](docs/IcHackControllerApi.md#get_account_id_using_get) | **GET** /get-account-id | getAccountID
 *IcHackControllerApi* | [**get_event_and_seat_using_get**](docs/IcHackControllerApi.md#get_event_and_seat_using_get) | **GET** /get-event-and-seat-id | getEventAndSeat
 *IcHackControllerApi* | [**get_file_using_get**](docs/IcHackControllerApi.md#get_file_using_get) | **GET** /image | getFile
+*IcHackControllerApi* | [**get_image_and_name_to_fs_using_get**](docs/IcHackControllerApi.md#get_image_and_name_to_fs_using_get) | **GET** /get-image-and-name-in-fs | getImageAndNameToFS
+*IcHackControllerApi* | [**get_image_and_name_using_get**](docs/IcHackControllerApi.md#get_image_and_name_using_get) | **GET** /get-image-and-name | getImageAndName
 *IcHackControllerApi* | [**issue_airline_ticket_using_post**](docs/IcHackControllerApi.md#issue_airline_ticket_using_post) | **POST** /issue-ticket | issueAirlineTicket
 *IcHackControllerApi* | [**verify_proof_from_s3_using_get**](docs/IcHackControllerApi.md#verify_proof_from_s3_using_get) | **GET** /verify | verifyProofFromS3
 *IssuerControllerApi* | [**get_credential_definition_using_put**](docs/IssuerControllerApi.md#get_credential_definition_using_put) | **PUT** /get-credential-definition | getCredentialDefinition

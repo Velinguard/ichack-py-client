@@ -279,6 +279,119 @@ class IcHackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_new_user_wallet_without_image_using_post(self, _date, **kwargs):  # noqa: E501
+        """createNewUserWalletWithoutImage  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_new_user_wallet_without_image_using_post(_date, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param date _date: date (required)
+        :param str account_id: accountID
+        :param str name: name
+        :param str prover_wallet_id: proverWalletId
+        :param str prover_wallet_key: proverWalletKey
+        :return: EmailInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_new_user_wallet_without_image_using_post_with_http_info(_date, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_new_user_wallet_without_image_using_post_with_http_info(_date, **kwargs)  # noqa: E501
+            return data
+
+    def create_new_user_wallet_without_image_using_post_with_http_info(self, _date, **kwargs):  # noqa: E501
+        """createNewUserWalletWithoutImage  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_new_user_wallet_without_image_using_post_with_http_info(_date, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param date _date: date (required)
+        :param str account_id: accountID
+        :param str name: name
+        :param str prover_wallet_id: proverWalletId
+        :param str prover_wallet_key: proverWalletKey
+        :return: EmailInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['_date', 'account_id', 'name', 'prover_wallet_id', 'prover_wallet_key']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_new_user_wallet_without_image_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter '_date' is set
+        if ('_date' not in params or
+                params['_date'] is None):
+            raise ValueError("Missing the required parameter `_date` when calling `create_new_user_wallet_without_image_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'account_id' in params:
+            query_params.append(('accountID', params['account_id']))  # noqa: E501
+        if '_date' in params:
+            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
+        if 'prover_wallet_id' in params:
+            query_params.append(('proverWalletId', params['prover_wallet_id']))  # noqa: E501
+        if 'prover_wallet_key' in params:
+            query_params.append(('proverWalletKey', params['prover_wallet_key']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/create-wallet-without-image', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='EmailInfo',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_account_id_using_get(self, **kwargs):  # noqa: E501
         """getAccountID  # noqa: E501
 
@@ -490,6 +603,7 @@ class IcHackControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str image: image
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -510,12 +624,13 @@ class IcHackControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str image: image
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['image']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -536,6 +651,8 @@ class IcHackControllerApi(object):
         path_params = {}
 
         query_params = []
+        if 'image' in params:
+            query_params.append(('image', params['image']))  # noqa: E501
 
         header_params = {}
 
@@ -559,6 +676,208 @@ class IcHackControllerApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_image_and_name_to_fs_using_get(self, **kwargs):  # noqa: E501
+        """getImageAndNameToFS  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_image_and_name_to_fs_using_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str did: did
+        :param str id: id
+        :param str key: key
+        :param str mid: mid
+        :return: ImageName
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_image_and_name_to_fs_using_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_image_and_name_to_fs_using_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_image_and_name_to_fs_using_get_with_http_info(self, **kwargs):  # noqa: E501
+        """getImageAndNameToFS  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_image_and_name_to_fs_using_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str did: did
+        :param str id: id
+        :param str key: key
+        :param str mid: mid
+        :return: ImageName
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['did', 'id', 'key', 'mid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_image_and_name_to_fs_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'did' in params:
+            query_params.append(('did', params['did']))  # noqa: E501
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
+        if 'key' in params:
+            query_params.append(('key', params['key']))  # noqa: E501
+        if 'mid' in params:
+            query_params.append(('mid', params['mid']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/get-image-and-name-in-fs', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ImageName',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_image_and_name_using_get(self, **kwargs):  # noqa: E501
+        """getImageAndName  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_image_and_name_using_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str did: did
+        :param str id: id
+        :param str key: key
+        :param str mid: mid
+        :return: ImageName
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_image_and_name_using_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_image_and_name_using_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_image_and_name_using_get_with_http_info(self, **kwargs):  # noqa: E501
+        """getImageAndName  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_image_and_name_using_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str did: did
+        :param str id: id
+        :param str key: key
+        :param str mid: mid
+        :return: ImageName
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['did', 'id', 'key', 'mid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_image_and_name_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'did' in params:
+            query_params.append(('did', params['did']))  # noqa: E501
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
+        if 'key' in params:
+            query_params.append(('key', params['key']))  # noqa: E501
+        if 'mid' in params:
+            query_params.append(('mid', params['mid']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/get-image-and-name', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ImageName',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -767,7 +1086,7 @@ class IcHackControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['image/jpg'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501

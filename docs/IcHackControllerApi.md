@@ -6,9 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_new_user_id_using_post**](IcHackControllerApi.md#create_new_user_id_using_post) | **POST** /createNewUser | createNewUserID
 [**create_new_user_wallet_using_post**](IcHackControllerApi.md#create_new_user_wallet_using_post) | **POST** /create-wallet | createNewUserWallet
+[**create_new_user_wallet_without_image_using_post**](IcHackControllerApi.md#create_new_user_wallet_without_image_using_post) | **POST** /create-wallet-without-image | createNewUserWalletWithoutImage
 [**get_account_id_using_get**](IcHackControllerApi.md#get_account_id_using_get) | **GET** /get-account-id | getAccountID
 [**get_event_and_seat_using_get**](IcHackControllerApi.md#get_event_and_seat_using_get) | **GET** /get-event-and-seat-id | getEventAndSeat
 [**get_file_using_get**](IcHackControllerApi.md#get_file_using_get) | **GET** /image | getFile
+[**get_image_and_name_to_fs_using_get**](IcHackControllerApi.md#get_image_and_name_to_fs_using_get) | **GET** /get-image-and-name-in-fs | getImageAndNameToFS
+[**get_image_and_name_using_get**](IcHackControllerApi.md#get_image_and_name_using_get) | **GET** /get-image-and-name | getImageAndName
 [**issue_airline_ticket_using_post**](IcHackControllerApi.md#issue_airline_ticket_using_post) | **POST** /issue-ticket | issueAirlineTicket
 [**verify_proof_from_s3_using_get**](IcHackControllerApi.md#verify_proof_from_s3_using_get) | **GET** /verify | verifyProofFromS3
 
@@ -131,6 +134,60 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_new_user_wallet_without_image_using_post**
+> EmailInfo create_new_user_wallet_without_image_using_post(_date, account_id=account_id, name=name, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key)
+
+createNewUserWalletWithoutImage
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IcHackControllerApi()
+_date = '2013-10-20' # date | date
+account_id = 'account_id_example' # str | accountID (optional)
+name = 'name_example' # str | name (optional)
+prover_wallet_id = 'prover_wallet_id_example' # str | proverWalletId (optional)
+prover_wallet_key = 'prover_wallet_key_example' # str | proverWalletKey (optional)
+
+try:
+    # createNewUserWalletWithoutImage
+    api_response = api_instance.create_new_user_wallet_without_image_using_post(_date, account_id=account_id, name=name, prover_wallet_id=prover_wallet_id, prover_wallet_key=prover_wallet_key)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IcHackControllerApi->create_new_user_wallet_without_image_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **_date** | **date**| date | 
+ **account_id** | **str**| accountID | [optional] 
+ **name** | **str**| name | [optional] 
+ **prover_wallet_id** | **str**| proverWalletId | [optional] 
+ **prover_wallet_key** | **str**| proverWalletKey | [optional] 
+
+### Return type
+
+[**EmailInfo**](EmailInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_account_id_using_get**
 > str get_account_id_using_get(did=did, id=id, key=key, mid=mid)
 
@@ -236,7 +293,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_file_using_get**
-> str get_file_using_get()
+> str get_file_using_get(image=image)
 
 getFile
 
@@ -250,17 +307,21 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.IcHackControllerApi()
+image = 'image_example' # str | image (optional)
 
 try:
     # getFile
-    api_response = api_instance.get_file_using_get()
+    api_response = api_instance.get_file_using_get(image=image)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IcHackControllerApi->get_file_using_get: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **image** | **str**| image | [optional] 
 
 ### Return type
 
@@ -274,6 +335,110 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: image/jpg
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_image_and_name_to_fs_using_get**
+> ImageName get_image_and_name_to_fs_using_get(did=did, id=id, key=key, mid=mid)
+
+getImageAndNameToFS
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IcHackControllerApi()
+did = 'did_example' # str | did (optional)
+id = 'id_example' # str | id (optional)
+key = 'key_example' # str | key (optional)
+mid = 'mid_example' # str | mid (optional)
+
+try:
+    # getImageAndNameToFS
+    api_response = api_instance.get_image_and_name_to_fs_using_get(did=did, id=id, key=key, mid=mid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IcHackControllerApi->get_image_and_name_to_fs_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **did** | **str**| did | [optional] 
+ **id** | **str**| id | [optional] 
+ **key** | **str**| key | [optional] 
+ **mid** | **str**| mid | [optional] 
+
+### Return type
+
+[**ImageName**](ImageName.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_image_and_name_using_get**
+> ImageName get_image_and_name_using_get(did=did, id=id, key=key, mid=mid)
+
+getImageAndName
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.IcHackControllerApi()
+did = 'did_example' # str | did (optional)
+id = 'id_example' # str | id (optional)
+key = 'key_example' # str | key (optional)
+mid = 'mid_example' # str | mid (optional)
+
+try:
+    # getImageAndName
+    api_response = api_instance.get_image_and_name_using_get(did=did, id=id, key=key, mid=mid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IcHackControllerApi->get_image_and_name_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **did** | **str**| did | [optional] 
+ **id** | **str**| id | [optional] 
+ **key** | **str**| key | [optional] 
+ **mid** | **str**| mid | [optional] 
+
+### Return type
+
+[**ImageName**](ImageName.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -385,7 +550,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: image/jpg
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
